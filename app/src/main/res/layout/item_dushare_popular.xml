@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/popularRoot"
+    android:layout_width="260dp"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="14dp"
+    android:background="@drawable/bg_dushare_card"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!-- Subject Pill -->
+    <TextView
+        android:id="@+id/txtSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dushare_pill_active"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Pemrograman"
+        android:textColor="@color/dushare_primary_container"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Bookmark Button -->
+    <ImageView
+        android:id="@+id/btnBookmark"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Simpan"
+        android:src="@drawable/ic_dushare_bookmark"
+        app:layout_constraintBottom_toBottomOf="@id/txtSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtSubject"
+        app:tint="@color/dushare_outline" />
+
+    <!-- File Meta -->
+    <TextView
+        android:id="@+id/txtFileMeta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="PDF • 34 Halaman"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSubject" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:maxLines="2"
+        android:text="Ringkasan Object Oriented Programming"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtFileMeta" />
+
+    <!-- Author Avatar & Name -->
+    <ImageView
+        android:id="@+id/imgAuthorAvatar"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_dushare_pill_inactive"
+        android:src="@drawable/user"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtTitle" />
+
+    <TextView
+        android:id="@+id/txtAuthorName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:singleLine="true"
+        android:text="Andi Pratama"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgAuthorAvatar"
+        app:layout_constraintEnd_toStartOf="@id/imgVerified"
+        app:layout_constraintStart_toEndOf="@id/imgAuthorAvatar"
+        app:layout_constraintTop_toTopOf="@id/imgAuthorAvatar" />
+
+    <ImageView
+        android:id="@+id/imgVerified"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_dushare_verified"
+        app:layout_constraintBottom_toBottomOf="@id/imgAuthorAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgAuthorAvatar"
+        app:tint="@color/dushare_primary_container" />
+
+    <!-- Bottom Row (Rating & Review count & Chevron) -->
+    <ImageView
+        android:id="@+id/imgPopularStar"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginTop="12dp"
+        android:src="@drawable/ic_dushare_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgAuthorAvatar" />
+
+    <TextView
+        android:id="@+id/txtRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="4.8"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgPopularStar"
+        app:layout_constraintStart_toEndOf="@id/imgPopularStar"
+        app:layout_constraintTop_toTopOf="@id/imgPopularStar" />
+
+    <TextView
+        android:id="@+id/txtReviewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="(128 ulasan)"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgPopularStar"
+        app:layout_constraintStart_toEndOf="@id/txtRating"
+        app:layout_constraintTop_toTopOf="@id/imgPopularStar" />
+
+    <ImageView
+        android:id="@+id/imgChevron"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/ic_dushare_chevron_right"
+        app:layout_constraintBottom_toBottomOf="@id/imgPopularStar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/imgPopularStar"
+        app:tint="@color/dushare_primary_container" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

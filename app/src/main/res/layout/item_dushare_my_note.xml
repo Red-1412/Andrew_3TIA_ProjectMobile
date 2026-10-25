@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/myNoteRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_dushare_card"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!-- Header Row Subject -->
+    <TextView
+        android:id="@+id/txtMyNoteSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dushare_pill_active"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="3dp"
+        android:text="Pemrograman • Dipublikasikan"
+        android:textColor="@color/dushare_primary_container"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnMyNoteMenu"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Opsi"
+        android:src="@drawable/ic_dushare_more_vert"
+        app:layout_constraintBottom_toBottomOf="@id/txtMyNoteSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtMyNoteSubject" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtMyNoteTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:maxLines="2"
+        android:text="Ringkasan Object Oriented Programming"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMyNoteSubject" />
+
+    <!-- File Meta -->
+    <TextView
+        android:id="@+id/txtMyNoteFileMeta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="PDF • 34 Halaman"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgMyNoteStar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtMyNoteTitle" />
+
+    <!-- Rating & Downloads -->
+    <ImageView
+        android:id="@+id/imgMyNoteStar"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_dushare_star"
+        app:layout_constraintBottom_toBottomOf="@id/txtMyNoteFileMeta"
+        app:layout_constraintEnd_toStartOf="@id/txtMyNoteRating"
+        app:layout_constraintTop_toTopOf="@id/txtMyNoteFileMeta" />
+
+    <TextView
+        android:id="@+id/txtMyNoteRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="4.8"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtMyNoteFileMeta"
+        app:layout_constraintEnd_toStartOf="@id/txtMyNoteDownloads"
+        app:layout_constraintTop_toTopOf="@id/txtMyNoteFileMeta" />
+
+    <TextView
+        android:id="@+id/txtMyNoteDownloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="140 unduhan"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtMyNoteFileMeta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtMyNoteFileMeta" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

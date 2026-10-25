@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="black_background">#81000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#CACACA</color>
+    <color name="red">#D31A1A</color>
+
+    <!-- duShare Design System Tokens -->
+    <color name="dushare_primary">#004AC6</color>
+    <color name="dushare_primary_container">#2563EB</color>
+    <color name="dushare_on_primary">#FFFFFF</color>
+    <color name="dushare_on_primary_container">#EEEFFF</color>
+    <color name="dushare_secondary">#1D4ED8</color>
+    <color name="dushare_secondary_container">#4069F2</color>
+    <color name="dushare_background">#FAF8FF</color>
+    <color name="dushare_surface">#FAF8FF</color>
+    <color name="dushare_surface_lowest">#FFFFFF</color>
+    <color name="dushare_surface_low">#F2F3FF</color>
+    <color name="dushare_surface_container">#EAEDFF</color>
+    <color name="dushare_surface_high">#E2E7FF</color>
+    <color name="dushare_surface_highest">#DAE2FD</color>
+    <color name="dushare_on_surface">#131B2E</color>
+    <color name="dushare_on_surface_variant">#434655</color>
+    <color name="dushare_outline">#737686</color>
+    <color name="dushare_outline_variant">#C3C6D7</color>
+    <color name="dushare_blue_light">#EFF6FF</color>
+    <color name="dushare_blue_border">#DBEAFE</color>
+    <color name="dushare_yellow_star">#F59E0B</color>
+    <color name="dushare_green_success">#22C55E</color>
+    <color name="dushare_red_error">#EF4444</color>
+    <color name="dushare_card_stroke">#E2E8F0</color>
+    <color name="dushare_text_muted">#64748B</color>
+    <color name="dushare_badge_ppt">#EA580C</color>
+    <color name="dushare_badge_doc">#0284C7</color>
+    <color name="dushare_badge_pdf">#DC2626</color>
+</resources>

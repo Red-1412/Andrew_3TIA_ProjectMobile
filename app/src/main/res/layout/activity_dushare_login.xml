@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dushare_surface"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/loginMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Inner Content Container with Margins so content never touches phone edges -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loginContentContainer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="32dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <!-- Top Navigation -->
+            <ImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:background="@drawable/bg_dushare_card"
+                android:contentDescription="Kembali"
+                android:elevation="1dp"
+                android:src="@drawable/ic_dushare_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- Brand Pill -->
+            <LinearLayout
+                android:id="@+id/pillBrand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dushare_pill_inactive"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="14dp"
+                android:paddingVertical="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnBack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnBack">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="6dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="Edu"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="Share"
+                    android:textColor="@color/dushare_primary_container"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Hero Section Frame Logo -->
+            <FrameLayout
+                android:id="@+id/frameLogo"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/bg_dushare_card"
+                android:elevation="2dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBack">
+
+                <ImageView
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/logo" />
+            </FrameLayout>
+
+            <TextView
+                android:id="@+id/txtWelcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:gravity="center"
+                android:text="Selamat Datang Kembali!"
+                android:textColor="@color/dushare_on_surface"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/frameLogo" />
+
+            <TextView
+                android:id="@+id/txtWelcomeSub"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:gravity="center"
+                android:lineSpacingExtra="2dp"
+                android:paddingHorizontal="12dp"
+                android:text="Masuk ke akun EduShare untuk melanjutkan belajar dan berbagi materi kuliah."
+                android:textColor="@color/dushare_on_surface_variant"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWelcome" />
+
+            <!-- Email Label -->
+            <TextView
+                android:id="@+id/txtEmailLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Email Mahasiswa"
+                android:textColor="@color/dushare_on_surface"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtWelcomeSub" />
+
+            <!-- Email Field -->
+            <LinearLayout
+                android:id="@+id/layoutEmailField"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_dushare_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEmailLabel">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dushare_mail"
+                    app:tint="@color/dushare_outline" />
+
+                <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:hint="contoh: nama@mahasiswa.ac.id"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textColorHint="@color/dushare_outline"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Password Label -->
+            <TextView
+                android:id="@+id/txtPasswordLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Password"
+                android:textColor="@color/dushare_on_surface"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutEmailField" />
+
+            <!-- Password Field -->
+            <LinearLayout
+                android:id="@+id/layoutPasswordField"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_dushare_input"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtPasswordLabel">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dushare_lock"
+                    app:tint="@color/dushare_outline" />
+
+                <EditText
+                    android:id="@+id/edtPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:hint="Masukkan password kamu"
+                    android:inputType="textPassword"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textColorHint="@color/dushare_outline"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/btnTogglePassword"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:src="@drawable/ic_dushare_visibility"
+                    app:tint="@color/dushare_outline" />
+            </LinearLayout>
+
+            <!-- Options Row -->
+            <CheckBox
+                android:id="@+id/cbRememberMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:buttonTint="@color/dushare_primary_container"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Ingat Saya"
+                android:textColor="@color/dushare_on_surface_variant"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutPasswordField" />
+
+            <TextView
+                android:id="@+id/txtForgotPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Lupa Password?"
+                android:textColor="@color/dushare_primary"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cbRememberMe"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cbRememberMe" />
+
+            <!-- Submit Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnLogin"
+                android:layout_width="0dp"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_dushare_primary_btn"
+                android:drawableEnd="@drawable/ic_dushare_arrow_forward"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:paddingHorizontal="24dp"
+                android:text="Masuk"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cbRememberMe" />
+
+            <!-- Community Verification Badge -->
+            <LinearLayout
+                android:id="@+id/layoutCommunityBadge"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_dushare_pill_inactive"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingVertical="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+
+                <ImageView
+                    android:layout_width="16dp"
+                    android:layout_height="16dp"
+                    android:src="@drawable/ic_dushare_verified"
+                    app:tint="@color/dushare_primary_container" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Terhubung dengan lebih dari 120+ Universitas"
+                    android:textColor="@color/dushare_on_surface_variant"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- Divider -->
+            <View
+                android:id="@+id/dividerLeft"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/dushare_surface_highest"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDividerOr"
+                app:layout_constraintEnd_toStartOf="@+id/txtDividerOr"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtDividerOr" />
+
+            <TextView
+                android:id="@+id/txtDividerOr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:paddingHorizontal="12dp"
+                android:text="atau masuk dengan"
+                android:textColor="@color/dushare_outline"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutCommunityBadge" />
+
+            <View
+                android:id="@+id/dividerRight"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="@color/dushare_surface_highest"
+                app:layout_constraintBottom_toBottomOf="@+id/txtDividerOr"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtDividerOr"
+                app:layout_constraintTop_toTopOf="@+id/txtDividerOr" />
+
+            <!-- Google Sign In Button -->
+            <LinearLayout
+                android:id="@+id/btnGoogleSignIn"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_dushare_card"
+                android:elevation="1dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtDividerOr">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:src="@drawable/ic_dushare_google" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="Masuk dengan Google"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Register Link -->
+            <TextView
+                android:id="@+id/txtNoAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Belum punya akun? "
+                android:textColor="@color/dushare_on_surface_variant"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@+id/txtRegister"
+                app:layout_constraintHorizontal_chainStyle="packed"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnGoogleSignIn" />
+
+            <TextView
+                android:id="@+id/txtRegister"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Daftar Sekarang"
+                android:textColor="@color/dushare_primary_container"
+                android:textSize="13sp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNoAccount"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/txtNoAccount"
+                app:layout_constraintTop_toTopOf="@+id/txtNoAccount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

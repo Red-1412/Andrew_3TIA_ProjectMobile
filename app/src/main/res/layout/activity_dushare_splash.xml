@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/splashRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dushare_surface">
+
+    <!-- Top Tag -->
+    <LinearLayout
+        android:id="@+id/topTagLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_dushare_school"
+            app:tint="@color/dushare_primary" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:letterSpacing="0.08"
+            android:text="KAMPUS COLLAB"
+            android:textColor="@color/dushare_primary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Center Content -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/centerContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/bottomSection"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topTagLayout">
+
+        <!-- Logo Frame -->
+        <FrameLayout
+            android:id="@+id/frameSplashLogo"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:background="@drawable/bg_dushare_card"
+            android:elevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_gravity="center"
+                android:scaleType="fitCenter"
+                android:src="@drawable/logo" />
+
+            <!-- Corner Badge -->
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_dushare_primary_btn"
+                android:padding="4dp"
+                android:src="@drawable/ic_dushare_school"
+                app:tint="@color/white" />
+        </FrameLayout>
+
+        <!-- Brand Name -->
+        <TextView
+            android:id="@+id/txtSplashEdu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Edu"
+            android:textColor="@color/dushare_on_surface"
+            android:textSize="36sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtSplashShare"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/frameSplashLogo" />
+
+        <TextView
+            android:id="@+id/txtSplashShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Share"
+            android:textColor="@color/dushare_primary_container"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtSplashEdu"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtSplashEdu"
+            app:layout_constraintTop_toTopOf="@+id/txtSplashEdu" />
+
+        <!-- Subtitle -->
+        <TextView
+            android:id="@+id/txtSplashSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:gravity="center"
+            android:text="Belajar Bersama, Berbagi Pengetahuan"
+            android:textColor="@color/dushare_on_surface_variant"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSplashEdu" />
+
+        <!-- Status Indicator -->
+        <ProgressBar
+            android:id="@+id/splashProgressBar"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="28dp"
+            android:indeterminateTint="@color/dushare_primary_container"
+            app:layout_constraintEnd_toStartOf="@+id/txtSplashStatus"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtSplashSubtitle" />
+
+        <TextView
+            android:id="@+id/txtSplashStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:letterSpacing="0.06"
+            android:text="MENYIAPKAN CATATAN"
+            android:textColor="@color/dushare_outline"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/splashProgressBar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/splashProgressBar"
+            app:layout_constraintTop_toTopOf="@+id/splashProgressBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Bottom Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:id="@+id/pillBottomPlatform"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dushare_pill_inactive"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/ic_dushare_school"
+                app:tint="@color/dushare_primary" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Platform Catatan Mahasiswa"
+                android:textColor="@color/dushare_on_surface_variant"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtSplashVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:letterSpacing="0.1"
+            android:text="VERSI 1.0.0"
+            android:textColor="@color/dushare_outline"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pillBottomPlatform" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

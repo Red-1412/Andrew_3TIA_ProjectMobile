@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dushare_surface">
+
+    <!-- Top Search Header -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topSearchHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dushare_surface_lowest"
+        android:elevation="2dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnSearchBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Kembali"
+            android:src="@drawable/ic_dushare_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/layoutInputQuery"
+            android:layout_width="0dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/bg_dushare_input"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnFilterOptions"
+            app:layout_constraintStart_toEndOf="@+id/btnSearchBack"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:src="@drawable/ic_dushare_search"
+                app:tint="@color/dushare_outline" />
+
+            <EditText
+                android:id="@+id/edtSearchQuery"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:background="@null"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:hint="Cari materi kuliah..."
+                android:imeOptions="actionSearch"
+                android:inputType="text"
+                android:text="Machine Learning"
+                android:textColor="@color/dushare_on_surface"
+                android:textColorHint="@color/dushare_outline"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/btnFilterOptions"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/bg_dushare_card"
+            android:contentDescription="Filter"
+            android:elevation="1dp"
+            android:src="@drawable/ic_dushare_filter"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topSearchHeader">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="24dp">
+
+            <!-- Result Count -->
+            <TextView
+                android:id="@+id/txtResultCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="128 materi ditemukan"
+                android:textColor="@color/dushare_on_surface"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/btnSort"
+                app:layout_constraintEnd_toStartOf="@+id/btnSort"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/btnSort" />
+
+            <!-- Sort Pill -->
+            <LinearLayout
+                android:id="@+id/btnSort"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dushare_pill_inactive"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Rating Tertinggi ▾"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <!-- File Type Filter Chips Scroll -->
+            <HorizontalScrollView
+                android:id="@+id/scrollChips"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnSort">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/chipAllFiles"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/bg_dushare_pill_active"
+                        android:fontFamily="@font/plusjakartasans_bold"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="7dp"
+                        android:text="✓ Semua File"
+                        android:textColor="@color/dushare_primary_container"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/chipPdf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_dushare_pill_inactive"
+                        android:fontFamily="@font/plusjakartasans_regular"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="7dp"
+                        android:text="PDF (84)"
+                        android:textColor="@color/dushare_on_surface_variant"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/chipPpt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_dushare_pill_inactive"
+                        android:fontFamily="@font/plusjakartasans_regular"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="7dp"
+                        android:text="PPT (26)"
+                        android:textColor="@color/dushare_on_surface_variant"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/chipDoc"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:background="@drawable/bg_dushare_pill_inactive"
+                        android:fontFamily="@font/plusjakartasans_regular"
+                        android:paddingHorizontal="14dp"
+                        android:paddingVertical="7dp"
+                        android:text="DOC (18)"
+                        android:textColor="@color/dushare_on_surface_variant"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <!-- Search Results List -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSearchResults"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:nestedScrollingEnabled="false"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollChips"
+                tools:listitem="@layout/item_dushare_search_result" />
+
+            <!-- Bottom Contribution Banner -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cardContributionBanner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_dushare_card_tinted"
+                android:padding="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvSearchResults">
+
+                <ImageView
+                    android:id="@+id/imgSchoolIcon"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_dushare_school"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/dushare_primary_container" />
+
+                <TextView
+                    android:id="@+id/txtBannerTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:text="Punya catatan materi ini?"
+                    android:textColor="@color/dushare_on_surface"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnUploadPrompt"
+                    app:layout_constraintStart_toEndOf="@+id/imgSchoolIcon"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txtBannerSub"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_marginEnd="8dp"
+                    android:fontFamily="@font/plusjakartasans_regular"
+                    android:text="Bantu temanmu dan raih poin reputasi!"
+                    android:textColor="@color/dushare_text_muted"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toStartOf="@+id/btnUploadPrompt"
+                    app:layout_constraintStart_toEndOf="@+id/imgSchoolIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/txtBannerTitle" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btnUploadPrompt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="36dp"
+                    android:background="@drawable/bg_dushare_primary_btn"
+                    android:fontFamily="@font/plusjakartasans_bold"
+                    android:paddingHorizontal="14dp"
+                    android:text="Unggah"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

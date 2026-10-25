@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/savedRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:background="@drawable/bg_dushare_card"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!-- Header Row -->
+    <TextView
+        android:id="@+id/txtSavedFileType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dushare_pill_active"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="3dp"
+        android:text="PDF"
+        android:textColor="@color/dushare_primary_container"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSavedSubject"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="Machine Learning"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedFileType"
+        app:layout_constraintEnd_toStartOf="@id/btnSavedBookmark"
+        app:layout_constraintStart_toEndOf="@id/txtSavedFileType"
+        app:layout_constraintTop_toTopOf="@id/txtSavedFileType" />
+
+    <ImageView
+        android:id="@+id/btnSavedBookmark"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Tersimpan"
+        android:src="@drawable/ic_dushare_bookmark_filled"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedFileType"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtSavedFileType"
+        app:tint="@color/dushare_primary_container" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtSavedTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:maxLines="2"
+        android:text="Machine Learning Dasar – Supervised Learning"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSavedFileType" />
+
+    <!-- Author & Metrics Row -->
+    <TextView
+        android:id="@+id/txtSavedAuthor"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="Budi Santoso • UI"
+        android:textColor="@color/dushare_on_surface_variant"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/imgSavedStar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSavedTitle" />
+
+    <ImageView
+        android:id="@+id/imgSavedStar"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:src="@drawable/ic_dushare_star"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedAuthor"
+        app:layout_constraintEnd_toStartOf="@id/txtSavedRating"
+        app:layout_constraintTop_toTopOf="@id/txtSavedAuthor" />
+
+    <TextView
+        android:id="@+id/txtSavedRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="4.9"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedAuthor"
+        app:layout_constraintEnd_toStartOf="@id/txtSavedDownloads"
+        app:layout_constraintTop_toTopOf="@id/txtSavedAuthor" />
+
+    <TextView
+        android:id="@+id/txtSavedDownloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="324 unduhan"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedAuthor"
+        app:layout_constraintEnd_toStartOf="@id/txtSavedPages"
+        app:layout_constraintTop_toTopOf="@id/txtSavedAuthor" />
+
+    <TextView
+        android:id="@+id/txtSavedPages"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="• 48 Hal"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtSavedAuthor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtSavedAuthor" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

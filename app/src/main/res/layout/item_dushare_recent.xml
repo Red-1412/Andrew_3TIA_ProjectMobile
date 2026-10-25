@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recentRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:background="@drawable/bg_dushare_card"
+    android:elevation="1dp"
+    android:padding="14dp">
+
+    <!-- File Format Icon Frame -->
+    <FrameLayout
+        android:id="@+id/frameFileBadge"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/bg_dushare_pill_active"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/txtFileTypeBadge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="PDF"
+            android:textColor="@color/dushare_primary_container"
+            android:textSize="12sp" />
+    </FrameLayout>
+
+    <!-- Bookmark Button -->
+    <ImageView
+        android:id="@+id/btnRecentBookmark"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Simpan"
+        android:padding="4dp"
+        android:src="@drawable/ic_dushare_bookmark"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/dushare_outline" />
+
+    <!-- Info Section -->
+    <TextView
+        android:id="@+id/txtRecentTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="8dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:maxLines="1"
+        android:text="Rangkuman Basis Data – Normalisasi"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@id/btnRecentBookmark"
+        app:layout_constraintStart_toEndOf="@id/frameFileBadge"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtRecentSubtitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:singleLine="true"
+        android:text="Basis Data • Siti Rahma"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toStartOf="@id/btnRecentBookmark"
+        app:layout_constraintStart_toStartOf="@id/txtRecentTitle"
+        app:layout_constraintTop_toBottomOf="@id/txtRecentTitle" />
+
+    <ImageView
+        android:id="@+id/imgRecentStar"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_dushare_star"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/txtRecentTitle"
+        app:layout_constraintTop_toBottomOf="@id/txtRecentSubtitle" />
+
+    <TextView
+        android:id="@+id/txtRecentRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="4.7"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgRecentStar"
+        app:layout_constraintStart_toEndOf="@id/imgRecentStar"
+        app:layout_constraintTop_toTopOf="@id/imgRecentStar" />
+
+    <TextView
+        android:id="@+id/txtRecentDownloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="• 1.2K unduhan"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgRecentStar"
+        app:layout_constraintStart_toEndOf="@id/txtRecentRating"
+        app:layout_constraintTop_toTopOf="@id/imgRecentStar" />
+
+    <TextView
+        android:id="@+id/txtRecentTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="• 2 jam lalu"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/imgRecentStar"
+        app:layout_constraintStart_toEndOf="@id/txtRecentDownloads"
+        app:layout_constraintTop_toTopOf="@id/imgRecentStar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

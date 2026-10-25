@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dushare_surface"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="24dp">
+
+        <!-- Greeting Section -->
+        <TextView
+            android:id="@+id/txtHalo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:text="Halo, 👋"
+            android:textColor="@color/dushare_on_surface_variant"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtGreetingName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Andrew"
+            android:textColor="@color/dushare_on_surface"
+            android:textSize="26sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHalo" />
+
+        <!-- Program Study Pill Badge -->
+        <LinearLayout
+            android:id="@+id/pillMajor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dushare_pill_active"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/txtGreetingName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtHalo">
+
+            <View
+                android:layout_width="6dp"
+                android:layout_height="6dp"
+                android:background="@drawable/bg_dushare_fab" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Teknik Informatika"
+                android:textColor="@color/dushare_primary_container"
+                android:textSize="11sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/txtMauBelajar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:text="Mau belajar apa hari ini?"
+            android:textColor="@color/dushare_on_surface_variant"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtGreetingName" />
+
+        <!-- Search Bar Input -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/btnSearchContainer"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_dushare_input"
+            android:clickable="true"
+            android:elevation="1dp"
+            android:focusable="true"
+            android:paddingHorizontal="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtMauBelajar">
+
+            <ImageView
+                android:id="@+id/imgSearchIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_dushare_search"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/dushare_outline" />
+
+            <TextView
+                android:id="@+id/txtSearchPlaceholder"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Cari materi, mata kuliah, atau topik..."
+                android:textColor="@color/dushare_outline"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/imgFilterIcon"
+                app:layout_constraintStart_toEndOf="@+id/imgSearchIcon"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imgFilterIcon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_dushare_filter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/dushare_primary_container" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Continue Reading Card -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cardContinueReading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_dushare_card_tinted"
+            android:elevation="2dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnSearchContainer">
+
+            <TextView
+                android:id="@+id/pillContinueFileType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dushare_pill_active"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:text="PDF • 28 Hal"
+                android:textColor="@color/dushare_primary_container"
+                android:textSize="11sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtContinueLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Lanjutkan Belajar"
+                android:textColor="@color/dushare_text_muted"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/pillContinueFileType"
+                app:layout_constraintStart_toEndOf="@+id/pillContinueFileType"
+                app:layout_constraintTop_toTopOf="@+id/pillContinueFileType" />
+
+            <TextView
+                android:id="@+id/txtContinueTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="Struktur Data &amp; Algoritma: Binary Search Tree"
+                android:textColor="@color/dushare_on_surface"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pillContinueFileType" />
+
+            <TextView
+                android:id="@+id/txtContinueSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/plusjakartasans_regular"
+                android:text="Terakhir dibaca di Halaman 18"
+                android:textColor="@color/dushare_text_muted"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtContinueTitle" />
+
+            <!-- Progress Bar -->
+            <ProgressBar
+                android:id="@+id/progressContinue"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
+                android:max="100"
+                android:progress="65"
+                android:progressTint="@color/dushare_primary_container"
+                app:layout_constraintBottom_toBottomOf="@+id/txtProgressPercent"
+                app:layout_constraintEnd_toStartOf="@+id/txtProgressPercent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtProgressPercent" />
+
+            <TextView
+                android:id="@+id/txtProgressPercent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:text="65% selesai"
+                android:textColor="@color/dushare_primary_container"
+                android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtContinueSubtitle" />
+
+            <!-- Lanjutkan Action -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnContinueReading"
+                android:layout_width="wrap_content"
+                android:layout_height="38dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_dushare_primary_btn"
+                android:drawableEnd="@drawable/ic_dushare_arrow_forward"
+                android:fontFamily="@font/plusjakartasans_bold"
+                android:paddingHorizontal="16dp"
+                android:text="Lanjutkan"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtProgressPercent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Course Category Section -->
+        <TextView
+            android:id="@+id/lblCourseCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Mata Kuliah"
+            android:textColor="@color/dushare_on_surface"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtSeeAllCourses"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cardContinueReading" />
+
+        <TextView
+            android:id="@+id/txtSeeAllCourses"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Lihat Semua"
+            android:textColor="@color/dushare_primary_container"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblCourseCategory"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblCourseCategory" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblCourseCategory"
+            tools:listitem="@layout/item_dushare_category" />
+
+        <!-- Popular Notes Section -->
+        <TextView
+            android:id="@+id/lblPopularNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Materi Populer"
+            android:textColor="@color/dushare_on_surface"
+            android:textSize="17sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
+
+        <TextView
+            android:id="@+id/badgePopularTrending"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:text="🔥 Trending Kampus"
+            android:textColor="@color/dushare_badge_ppt"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblPopularNotes"
+            app:layout_constraintStart_toEndOf="@+id/lblPopularNotes"
+            app:layout_constraintTop_toTopOf="@+id/lblPopularNotes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvPopularNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblPopularNotes"
+            tools:listitem="@layout/item_dushare_popular" />
+
+        <!-- Recent Notes Section -->
+        <TextView
+            android:id="@+id/lblRecentNotes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="Materi Terbaru"
+            android:textColor="@color/dushare_on_surface"
+            android:textSize="17sp"
+            app:layout_constraintEnd_toStartOf="@+id/txtRecentSort"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvPopularNotes" />
+
+        <TextView
+            android:id="@+id/txtRecentSort"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/plusjakartasans_regular"
+            android:text="Urutkan"
+            android:textColor="@color/dushare_text_muted"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/lblRecentNotes"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/lblRecentNotes" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecentNotes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:nestedScrollingEnabled="false"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblRecentNotes"
+            tools:listitem="@layout/item_dushare_recent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

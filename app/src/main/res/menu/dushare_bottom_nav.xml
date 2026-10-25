@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_dushare_home"
+        android:title="Beranda" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_dushare_search"
+        android:title="Eksplor" />
+    <item
+        android:id="@+id/nav_saved"
+        android:icon="@drawable/ic_dushare_saved"
+        android:title="Tersimpan" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/ic_dushare_profile"
+        android:title="Profil" />
+</menu>

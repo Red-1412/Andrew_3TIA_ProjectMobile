@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/searchResultRoot"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="14dp"
+    android:background="@drawable/bg_dushare_card"
+    android:elevation="1dp"
+    android:padding="16dp">
+
+    <!-- Header Row -->
+    <TextView
+        android:id="@+id/txtSearchSubject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dushare_pill_active"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:text="Machine Learning"
+        android:textColor="@color/dushare_primary_container"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txtSearchFileMeta"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="PDF • 48 Halaman"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/txtSearchSubject"
+        app:layout_constraintEnd_toStartOf="@id/btnSearchBookmark"
+        app:layout_constraintStart_toEndOf="@id/txtSearchSubject"
+        app:layout_constraintTop_toTopOf="@id/txtSearchSubject" />
+
+    <ImageView
+        android:id="@+id/btnSearchBookmark"
+        android:layout_width="26dp"
+        android:layout_height="26dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Simpan"
+        android:padding="2dp"
+        android:src="@drawable/ic_dushare_bookmark"
+        app:layout_constraintBottom_toBottomOf="@id/txtSearchSubject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txtSearchSubject"
+        app:tint="@color/dushare_outline" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/txtSearchTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="Machine Learning Dasar – Supervised Learning"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSearchSubject" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/txtSearchDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:ellipsize="end"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:lineSpacingExtra="2dp"
+        android:maxLines="3"
+        android:text="Ringkasan materi komprehensif mengenai konsep klasifikasi dan regresi dilengkapi studi kasus Python scikit-learn, evaluasi matriks, dan visualisasi boundary."
+        android:textColor="@color/dushare_on_surface_variant"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSearchTitle" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/searchDivider"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="12dp"
+        android:background="@color/dushare_surface_highest"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtSearchDescription" />
+
+    <!-- Author Avatar & Details -->
+    <FrameLayout
+        android:id="@+id/frameSearchAvatar"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/bg_dushare_pill_inactive"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchDivider">
+
+        <TextView
+            android:id="@+id/txtAuthorInitials"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/plusjakartasans_bold"
+            android:text="BS"
+            android:textColor="@color/dushare_primary_container"
+            android:textSize="11sp" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/txtSearchAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="Budi Santoso"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@id/frameSearchAvatar"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar" />
+
+    <ImageView
+        android:id="@+id/imgSearchVerified"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/ic_dushare_verified"
+        app:layout_constraintBottom_toBottomOf="@id/txtSearchAuthor"
+        app:layout_constraintStart_toEndOf="@id/txtSearchAuthor"
+        app:layout_constraintTop_toTopOf="@id/txtSearchAuthor"
+        app:tint="@color/dushare_primary_container" />
+
+    <TextView
+        android:id="@+id/txtSearchUniversity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="Universitas Indonesia"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintStart_toStartOf="@id/txtSearchAuthor"
+        app:layout_constraintTop_toBottomOf="@id/txtSearchAuthor" />
+
+    <!-- Right Side Metrics (Rating & Downloads) -->
+    <ImageView
+        android:id="@+id/imgSearchStar"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:src="@drawable/ic_dushare_star"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintEnd_toStartOf="@id/txtSearchRating"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar" />
+
+    <TextView
+        android:id="@+id/txtSearchRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/plusjakartasans_bold"
+        android:text="4.9"
+        android:textColor="@color/dushare_on_surface"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintEnd_toStartOf="@id/txtSearchReviewCount"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar" />
+
+    <TextView
+        android:id="@+id/txtSearchReviewCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="(86)"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintEnd_toStartOf="@id/imgSearchDownloadIcon"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar" />
+
+    <ImageView
+        android:id="@+id/imgSearchDownloadIcon"
+        android:layout_width="14dp"
+        android:layout_height="14dp"
+        android:layout_marginStart="8dp"
+        android:src="@drawable/ic_dushare_download"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintEnd_toStartOf="@id/txtSearchDownloads"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar"
+        app:tint="@color/dushare_text_muted" />
+
+    <TextView
+        android:id="@+id/txtSearchDownloads"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/plusjakartasans_regular"
+        android:text="324"
+        android:textColor="@color/dushare_text_muted"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@id/frameSearchAvatar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/frameSearchAvatar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
